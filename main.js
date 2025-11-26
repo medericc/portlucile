@@ -30,28 +30,25 @@ let projects = [
   
   {
     image: 'textures/maelys.jpg',
-    url: 'https://youtu.be/XfgEAt5VAp4?si=C_7dvMapXx_UFEJZ',
+    url: 'https://youtu.be/CeNIKLFCJV0?si=849VO48eTOUf-wT5',
+  },
+  {
+    image: 'textures/maelys1.jpg',
+    url: 'https://youtu.be/sDlDN6b8I3Q?si=CP2yZC2VBHFcLA1T',
   },
   {
     image: 'textures/maelys2.jpg',
-    url: 'https://youtu.be/BHSLlbC4xmo?si=RWJXNzPiJ_mx58Kj',
+    url: 'https://youtu.be/uD0u7Y9gZcM?si=8U1oQn3dt0N1pFAM',
   },
   {
     image: 'textures/maelys3.jpg',
-    url: 'https://youtu.be/HvELLw7NAvU?si=553wsJLyT_7m0Zyj',
+    url: 'https://youtu.be/IQXKrcI3U5c?si=HpyvLQtWx0UlYIpu',
   },
   {
     image: 'textures/maelys4.jpg',
-    url: 'https://youtu.be/4coiOzwppwI?si=zI5i_qAvNTFRnQzA',
+    url: 'https://youtu.be/hsSs0Gi5JMc?si=Cnd5J7Xk8JpqQUCt',
   },
-  {
-    image: 'textures/maelys5.jpg',
-    url: 'https://youtu.be/_FovDMBPxUM?si=7HSgqdEnq620aafY',
-  },
-  {
-    image: 'textures/maelys6.jpg',
-    url: 'https://youtu.be/YNXr_O7alMQ?si=2mCj-qUmVpN1-yBp',
-  },
+ 
 ];
 let aboutCameraPos = {
   x: 0.12,
@@ -249,10 +246,10 @@ roomLight.shadow.bias = -0.002;
 scene.add(roomLight);
 // add light for pc fans
 const fanLight1 = new THREE.PointLight(0xff0000, 30, 0.2);
-const fanLight2 = new THREE.PointLight(0x00ff00, 30, 0.12);
-const fanLight3 = new THREE.PointLight(0x00ff00, 30, 0.2);
-const fanLight4 = new THREE.PointLight(0x00ff00, 30, 0.2);
-const fanLight5 = new THREE.PointLight(0x00ff00, 30, 0.05);
+const fanLight2 = new THREE.PointLight(0x00cc00, 30, 0.12);
+const fanLight3 = new THREE.PointLight(0x00cc00, 30, 0.2);
+const fanLight4 = new THREE.PointLight(0x00cc00, 30, 0.2);
+const fanLight5 = new THREE.PointLight(0x00cc00, 30, 0.05);
 fanLight1.position.set(0, 0.29, -0.29);
 fanLight2.position.set(-0.15, 0.29, -0.29);
 fanLight3.position.set(0.21, 0.29, -0.29);
@@ -292,10 +289,10 @@ function loadIntroText() {
   const loader = new FontLoader();
   loader.load('fonts/unione.json', function (font) {
     const textMaterials = [
-      new THREE.MeshPhongMaterial({ color: 0x171f27, flatShading: true }),
+      new THREE.MeshPhongMaterial({ color: 0x0a0e12, flatShading: true }),
       new THREE.MeshPhongMaterial({ color: 0xffffff }),
     ];
-    const titleGeo = new TextGeometry('MAELYS FAURAT', {
+    const titleGeo = new TextGeometry('LUCILE JEROME', {
       font: font,
       size: 0.08,
       height: 0.01,
@@ -308,11 +305,11 @@ function loadIntroText() {
 
   loader.load('fonts/helvatica.json', function (font) {
     const textMaterials = [
-      new THREE.MeshPhongMaterial({ color: 0x171f27, flatShading: true }),
+      new THREE.MeshPhongMaterial({ color: 0x0a0e12, flatShading: true }),
       new THREE.MeshPhongMaterial({ color: 0xffffff }),
     ];
     const subTitleGeo = new TextGeometry(
-      'Meneuse du Roannais Basket Feminin',
+      'Meneuse des Flammes Carolo Basket Feminin',
       {
         font: font,
         size: 0.018,
@@ -333,19 +330,17 @@ function switchTheme(themeType) {
     document.body.classList.add('dark-theme');
 
     // main lights
-    gsap.to(roomLight.color, {
-      r: 0.27254901960784313,
-      g: 0.23137254901960785,
-      b: 0.6862745098039216,
-    });
-    gsap.to(ambientLight.color, {
-      r: 0.17254901960784313,
-      g: 0.23137254901960785,
-      b: 0.6862745098039216,
-    });
-    gsap.to(roomLight, {
-      intensity: 1.5,
-    });
+   gsap.to(roomLight.color, {
+  r: 0.54,
+  g: 0,
+  b: 0
+});
+gsap.to(ambientLight.color, {
+  r: 0.35,
+  g: 0,
+  b: 0
+});
+
     gsap.to(ambientLight, {
       intensity: 0.3,
     });
@@ -356,29 +351,15 @@ function switchTheme(themeType) {
     });
 
     // text color
-    gsap.to(titleText.material[0].color, {
-      r: 8,
-      g: 8,
-      b: 8,
-      duration: 0,
-    });
-    gsap.to(titleText.material[1].color, {
-      r: 5,
-      g: 5,
-      b: 5,
-      duration: 0,
-    });
+   gsap.to(titleText.material[0].color, { r: 0.8, g: 0, b: 0 });
+gsap.to(titleText.material[1].color, { r: 1, g: 0.5, b: 0.5 });
+
     gsap.to(subtitleText.material[0].color, {
-      r: 8,
-      g: 8,
-      b: 8,
-      duration: 0,
+      r: 0.8, g: 0, b: 0
+      
     });
     gsap.to(subtitleText.material[1].color, {
-      r: 5,
-      g: 5,
-      b: 5,
-      duration: 0,
+    r: 1, g: 0.5, b: 0.5
     });
 
     // text light
