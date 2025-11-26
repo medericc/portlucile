@@ -29,7 +29,7 @@ let clipNames = [
 let projects = [
   
   {
-    image: 'textures/maelys.jpg',
+    image: 'textures/maelys.png',
     url: 'https://youtu.be/CeNIKLFCJV0?si=849VO48eTOUf-wT5',
   },
   {
