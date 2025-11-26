@@ -48,7 +48,10 @@ let projects = [
     image: 'textures/maelys4.jpg',
     url: 'https://youtu.be/hsSs0Gi5JMc?si=Cnd5J7Xk8JpqQUCt',
   },
- 
+  {
+    image: 'textures/maelys4.jpg',
+    url: 'https://youtu.be/hsSs0Gi5JMc?si=Cnd5J7Xk8JpqQUCt',
+  },
 ];
 let aboutCameraPos = {
   x: 0.12,
